@@ -71,12 +71,14 @@ def _convertCsv(csvName, sheetModules, commonPaths):
 	#csv has only one sheet
 	csvName = os.path.join(commonPaths.INPUT_EXCEL_PATH, csvName)
 	sheetModule = sheetModules[0]
-	sheet = csv.reader(open(csvName))
+	f = open(csvName)
+	sheet = csv.reader(f)
 	allRow = []
 	for row in sheet:
 		for idx, m in enumerate(row):
 			row[idx] = row[idx].decode(getattr(sheetModules, 'ENCODING', 'gbk'))
 		allRow.append(row)
+	f.close()
 	_convertSheet(csvName, sheetModule, commonPaths, CsvSheet(allRow), CsvBook())
 
 
