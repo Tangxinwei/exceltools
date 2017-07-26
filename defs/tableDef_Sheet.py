@@ -5,6 +5,8 @@ from exceltools.DataTypeDef import *
 #sheet的下标
 #SHEET_IDX和SHEET_NAME二选一,必填
 SHEET_IDX = 0
+#csv的编码,仅对csv生效
+ENCODING = 'gbk'
 
 #输入每一行的格式,当选择为Dict的时候  这种情况只有定义了key而且excel中真的有值的列,才会被导出
 #									如果定义了CUSTOM_KEY_TUPLE,那么excel的每一列都会使用CUST_KEY里面的内容

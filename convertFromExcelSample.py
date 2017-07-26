@@ -10,4 +10,4 @@ sys.path.append(commonPath.DATA_PATH)
 import exceltools
 from defs import tableDef_Sheet
 
-exceltools.convert(u'测试.xlsx', [tableDef_Sheet], commonPath)
+exceltools.convert(u'测试.csv', [tableDef_Sheet], commonPath)
