@@ -76,7 +76,7 @@ def _convertCsv(csvName, sheetModules, commonPaths):
 	allRow = []
 	for row in sheet:
 		for idx, m in enumerate(row):
-			row[idx] = row[idx].decode(getattr(sheetModules, 'ENCODING', 'gbk'))
+			row[idx] = row[idx].decode(getattr(sheetModule, 'ENCODING', 'gbk'))
 		allRow.append(row)
 	f.close()
 	_convertSheet(csvName, sheetModule, commonPaths, CsvSheet(allRow), CsvBook())
